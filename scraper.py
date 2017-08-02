@@ -43,8 +43,8 @@ def GetOklahomaStateCases():
                   record = {}
                   #print 'http://www.oscn.net/dockets/GetCaseInformation.aspx?db=%s&number=%s-%s-%s' % (county, severity, year, CaseEndingNumber)
                   record['case'] ='http://www.oscn.net/dockets/GetCaseInformation.aspx?db=%s&number=%s-%s-%s' % (county, severity, year, CaseEndingNumber)
-    print 'ALL DATA:', record
-    scraperwiki.sqlite.save(unique_keys=['case'], data=record)
+                  print 'Case URL:', record
+                  scraperwiki.sqlite.save(unique_keys=['case'], data=record)
                 
 CaseEndingNumbers()
 ListOfCaseEndingNumbers = list(CaseEndingNumbers())
