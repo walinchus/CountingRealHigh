@@ -46,4 +46,4 @@ def GetOklahomaStateCases():
 CaseEndingNumbers()
 ListOfCaseEndingNumbers = list(CaseEndingNumbers())
 GetOklahomaStateCases()
-scraperwiki.sqlite.save(['case'],record)
+scraperwiki.sqlite.save(['case'])
