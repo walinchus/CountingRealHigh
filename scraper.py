@@ -41,8 +41,8 @@ def GetOklahomaStateCases():
             for year in years:
                 for severity in CrimeSeverity:
                   record = {}
-                    print 'http://www.oscn.net/dockets/GetCaseInformation.aspx?db=%s&number=%s-%s-%s' % (county, severity, year, CaseEndingNumber)
-                    record['case'] ='http://www.oscn.net/dockets/GetCaseInformation.aspx?db=%s&number=%s-%s-%s' % (county, severity, year, CaseEndingNumber)
+                  print 'http://www.oscn.net/dockets/GetCaseInformation.aspx?db=%s&number=%s-%s-%s' % (county, severity, year, CaseEndingNumber)
+                  record['case'] ='http://www.oscn.net/dockets/GetCaseInformation.aspx?db=%s&number=%s-%s-%s' % (county, severity, year, CaseEndingNumber)
 
 CaseEndingNumbers()
 ListOfCaseEndingNumbers = list(CaseEndingNumbers())
