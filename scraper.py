@@ -29,7 +29,7 @@ years = ['2011','2012','2013','2014','2015','2016','2017']
 CrimeSeverity = ['CF','CM']
 
 def CaseEndingNumbers():
-    for x in range(1, 1500):
+    for x in range(1, 5):
         yield '%d' % x
 
 
@@ -41,9 +41,11 @@ def GetOklahomaStateCases():
             for year in years:
                 for severity in CrimeSeverity:
                   record = {}
-                  print 'http://www.oscn.net/dockets/GetCaseInformation.aspx?db=%s&number=%s-%s-%s' % (county, severity, year, CaseEndingNumber)
-                  #record['case'] ='http://www.oscn.net/dockets/GetCaseInformation.aspx?db=%s&number=%s-%s-%s' % (county, severity, year, CaseEndingNumber)
-
+                  #print 'http://www.oscn.net/dockets/GetCaseInformation.aspx?db=%s&number=%s-%s-%s' % (county, severity, year, CaseEndingNumber)
+                  record['case'] ='http://www.oscn.net/dockets/GetCaseInformation.aspx?db=%s&number=%s-%s-%s' % (county, severity, year, CaseEndingNumber)
+    print 'ALL DATA:', record
+    scraperwiki.sqlite.save(unique_keys=['case'], data=record)
+                
 CaseEndingNumbers()
 ListOfCaseEndingNumbers = list(CaseEndingNumbers())
 GetOklahomaStateCases()
